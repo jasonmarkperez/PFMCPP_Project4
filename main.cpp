@@ -38,12 +38,12 @@ int main()
 {
     struct FloatType
     {
-        float add( float lhs, float rhs)
+        float add(float lhs, float rhs)
         {
             return lhs + rhs;
         }
 
-        float subtract(float lhs,float rhs )
+        float subtract(float lhs, float rhs)
         {
             return lhs - rhs;
         }
@@ -66,17 +66,17 @@ int main()
             return lhs + rhs;
         }
 
-        double subtract(double lhs, double rhs )
+        double subtract(double lhs, double rhs)
         {
             return lhs - rhs;
         }
 
-        double multiply(double lhs, double rhs )
+        double multiply(double lhs, double rhs)
         {
             return lhs * rhs;
         }
 
-        double divide(double lhs, double rhs )
+        double divide(double lhs, double rhs)
         {
             return lhs / rhs;   
         }
@@ -84,22 +84,22 @@ int main()
 
     struct IntType
     {
-        int add(int lhs,int rhs)
+        int add(int lhs, int rhs)
         {
             return lhs + rhs;
         }
 
-        int subtract(int lhs,int rhs )
+        int subtract(int lhs, int rhs)
         {
             return lhs - rhs;
         }
 
-        int multiply(int lhs,int rhs )
+        int multiply(int lhs, int rhs)
         {
             return lhs * rhs;
         }
 
-        int divide(int lhs,int rhs )
+        int divide(int lhs, int rhs)
         {
             return lhs / rhs;
         }
