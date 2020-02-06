@@ -36,7 +36,7 @@
 #include <iostream>
 int main()
 {
-    struct FloatType
+    struct FloatType FIXME do not define types inside main(). 
     {
         float add(float lhs, float rhs)
         {
@@ -55,7 +55,7 @@ int main()
 
         float divide(float lhs,float rhs )
         {
-            return lhs / rhs;
+            return lhs / rhs; FIXME warn user if rhs == 0.f
         }
     };
 
@@ -78,7 +78,7 @@ int main()
 
         double divide(double lhs, double rhs)
         {
-            return lhs / rhs;   
+            return lhs / rhs;   FIXME warn user if rhs == 0.0
         }
     };
 
@@ -101,7 +101,7 @@ int main()
 
         int divide(int lhs, int rhs)
         {
-            return lhs / rhs;
+            return lhs / rhs; FIXME handle case where rhs == 0.  integer division by 0 will crash the program.
         }
     };
 
