@@ -56,7 +56,7 @@ struct FloatType
 
         if(rhs == 0.f)
         {
-            std::cout << "WARN: Division by 0 is undefined behavior." << std::endl;
+            std::cout << "WARN: dividing by 0." << std::endl;
         }
         return lhs / rhs;
     }
@@ -83,7 +83,7 @@ struct DoubleType
     {
         if(rhs == 0.0)
         {
-            std::cout << "WARN: Division by 0 is undefined behavior." << std::endl;
+            std::cout << "WARN: dividing by 0." << std::endl;
         } 
        return lhs / rhs;
     }
@@ -108,11 +108,11 @@ struct IntType
 
     int divide(int lhs, int rhs)
     {
-        if(rhs == 0)
-        {
-            return 0;
-        }
+        if( rhs != 0 )
         return lhs / rhs;
+
+        std::cout << "cannot divide by 0" << std::endl;
+        return 0;
     }
 };
 
