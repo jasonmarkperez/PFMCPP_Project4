@@ -53,14 +53,12 @@ struct FloatType
 
     float divide(float lhs,float rhs )
     {
-        if(rhs != 0.f)
+
+        if(rhs == 0.f)
         {
-            return lhs / rhs;
-        } else 
-        {
-            std::cout << "cannot divide by 0" << std::endl;
-            return 0;
+            std::cout << "WARN: Division by 0 is undefined behavior." << std::endl;
         }
+        return lhs / rhs;
     }
 };
 
@@ -83,14 +81,11 @@ struct DoubleType
 
     double divide(double lhs, double rhs)
     {
-        if(rhs != 0.0)
+        if(rhs == 0.0)
         {
-            return lhs / rhs;
-        } else 
-        {
-            std::cout << "cannot divide by 0.0" << std::endl;
-            return 0;
-        }
+            std::cout << "WARN: Division by 0 is undefined behavior." << std::endl;
+        } 
+       return lhs / rhs;
     }
 };
 
@@ -111,24 +106,19 @@ struct IntType
         return lhs * rhs;
     }
 
-    int divide(int lhs, int rhs)
+    auto divide(int lhs, int rhs)
     {
-        if(rhs != 0)
+        if(rhs == 0)
         {
-            return lhs / rhs;
-        } else 
-        {
-            std::cout << "cannot divide by 0" << std::endl;
             return 0;
         }
+        return lhs / rhs;
     }
 };
 
 #include <iostream>
 int main()
 {
-
-
     FloatType ft;
     auto floatAddResult = ft.add(23.90f, 99.1245f);
     auto floatSubtractResult = ft.subtract(924, 12.42f);
@@ -154,7 +144,6 @@ int main()
     std::cout << "double multiple result: " << doubleMultiplyResult << std::endl;
     std::cout << "double divide result: " << doubleDivideResult << std::endl;
     std::cout << "double divide by zero result: " << doubleDivideByZero << std::endl;
-
 
     IntType it;
     auto intAddResult = it.add(2333, 969);
