@@ -106,7 +106,7 @@ struct IntType
         return lhs * rhs;
     }
 
-    auto divide(int lhs, int rhs)
+    int divide(int lhs, int rhs)
     {
         if(rhs == 0)
         {
