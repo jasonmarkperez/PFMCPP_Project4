@@ -53,7 +53,6 @@ struct FloatType
 
     float divide(float lhs,float rhs )
     {
-
         if(rhs == 0.f)
         {
             std::cout << "WARN: dividing by 0." << std::endl;
@@ -109,7 +108,7 @@ struct IntType
     int divide(int lhs, int rhs)
     {
         if( rhs != 0 )
-        return lhs / rhs;
+            return lhs / rhs;
 
         std::cout << "cannot divide by 0" << std::endl;
         return 0;
