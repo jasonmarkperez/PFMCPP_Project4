@@ -74,7 +74,9 @@ struct FloatType
 {
     float* f = nullptr;
 
-    FloatType(){}
+    FloatType(){
+        f = new float();
+    } //
 
     FloatType(float newFloat) 
     {
@@ -86,28 +88,32 @@ struct FloatType
         delete f;
     }
 
-    float add(float lhs, float rhs)
+    float& add(float rhs)
     {
-        return lhs + rhs;
+        *f += rhs;
+        return *f;
     }
 
-    float subtract(float lhs, float rhs)
+    float& subtract(float rhs)
     {
-        return lhs - rhs;
+        *f -= rhs;
+        return *f;
     }
 
-    float multiply(float lhs,float rhs )
+    float& multiply(float rhs)
     {
-        return lhs * rhs;
+        *f *= rhs;
+        return *f;
     }
 
-    float divide(float lhs,float rhs )
+    float& divide(float rhs)
     {
         if(rhs == 0.f)
         {
             std::cout << "WARN: dividing by 0." << std::endl;
         }
-        return lhs / rhs;
+        *f /= rhs;
+        return *f;
     }
 };
 
@@ -196,43 +202,43 @@ struct IntType
 #include <iostream>
 int main()
 {
-    FloatType ft;
+    FloatType ft(23.11f);
 
-    auto floatAddResult = ft.add(23.90f, 99.1245f);
-    auto floatSubtractResult = ft.subtract(924, 12.42f);
-    auto floatMultiplyResult = ft.multiply(12.415f, 2.0f);
-    auto floatDivideResult = ft.divide(2.20f, 21.4f);
-    auto floatDivideByZero = ft.divide(2.20f, 0.0f);
+    std::cout << ft.add(23.90f) << std::endl;
+    // auto floatSubtractResult = ft.subtract(924, 12.42f);
+    // auto floatMultiplyResult = ft.multiply(12.415f, 2.0f);
+    // auto floatDivideResult = ft.divide(2.20f, 21.4f);
+    // auto floatDivideByZero = ft.divide(2.20f, 0.0f);
 
-    std::cout << "float add result: " << floatAddResult << std::endl;
-    std::cout << "float subtract result: " << floatSubtractResult << std::endl;
-    std::cout << "float multiple result: " << floatMultiplyResult << std::endl;
-    std::cout << "float divide result: " << floatDivideResult << std::endl;
-    std::cout << "float divide by zero result: " << floatDivideByZero << std::endl;
+    // std::cout << "float add result: " << floatAddResult << std::endl;
+    // std::cout << "float subtract result: " << floatSubtractResult << std::endl;
+    // std::cout << "float multiple result: " << floatMultiplyResult << std::endl;
+    // std::cout << "float divide result: " << floatDivideResult << std::endl;
+    // std::cout << "float divide by zero result: " << floatDivideByZero << std::endl;
 
     DoubleType dt;
-    auto doubleAddResult = dt.add(2333.90, 969.1245);
-    auto doubleSubtractResult = dt.subtract(924, 12.42);
-    auto doubleMultiplyResult = dt.multiply(122.415, 2.0);
-    auto doubleDivideResult = dt.divide(24.20, 21.4);
-    auto doubleDivideByZero = dt.divide(24.20, 0);
+    // auto doubleAddResult = dt.add(2333.90, 969.1245);
+    // auto doubleSubtractResult = dt.subtract(924, 12.42);
+    // auto doubleMultiplyResult = dt.multiply(122.415, 2.0);
+    // auto doubleDivideResult = dt.divide(24.20, 21.4);
+    // auto doubleDivideByZero = dt.divide(24.20, 0);
 
-    std::cout << "double add result: " << doubleAddResult << std::endl;
-    std::cout << "double subtract result: " << doubleSubtractResult << std::endl;
-    std::cout << "double multiple result: " << doubleMultiplyResult << std::endl;
-    std::cout << "double divide result: " << doubleDivideResult << std::endl;
-    std::cout << "double divide by zero result: " << doubleDivideByZero << std::endl;
+    // std::cout << "double add result: " << doubleAddResult << std::endl;
+    // std::cout << "double subtract result: " << doubleSubtractResult << std::endl;
+    // std::cout << "double multiple result: " << doubleMultiplyResult << std::endl;
+    // std::cout << "double divide result: " << doubleDivideResult << std::endl;
+    // std::cout << "double divide by zero result: " << doubleDivideByZero << std::endl;
 
     IntType it;
-    auto intAddResult = it.add(2333, 969);
-    auto intSubtractResult = it.subtract(924, 12);
-    auto intMultiplyResult = it.multiply(122, 2);
-    auto intDivideResult = it.divide(24, 2);
-    auto intDivideByZero = it.divide(24, 0);
+    // auto intAddResult = it.add(2333, 969);
+    // auto intSubtractResult = it.subtract(924, 12);
+    // auto intMultiplyResult = it.multiply(122, 2);
+    // auto intDivideResult = it.divide(24, 2);
+    // auto intDivideByZero = it.divide(24, 0);
 
-    std::cout << "int add result: " << intAddResult << std::endl;
-    std::cout << "int subtract result: " << intSubtractResult << std::endl;
-    std::cout << "int multiple result: " << intMultiplyResult << std::endl;
-    std::cout << "int divide result: " << intDivideResult << std::endl;
-    std::cout << "int divide by zero: " << intDivideByZero << std::endl;
+    // std::cout << "int add result: " << intAddResult << std::endl;
+    // std::cout << "int subtract result: " << intSubtractResult << std::endl;
+    // std::cout << "int multiple result: " << intMultiplyResult << std::endl;
+    // std::cout << "int divide result: " << intDivideResult << std::endl;
+    // std::cout << "int divide by zero: " << intDivideByZero << std::endl;
 }
