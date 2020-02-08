@@ -72,6 +72,20 @@ struct HeapA
 
 struct FloatType
 {
+    float* f = nullptr;
+
+    FloatType(){}
+
+    FloatType(float newFloat) 
+    {
+        f = new float(newFloat);
+    }
+
+    ~FloatType()
+    {
+        delete f;
+    }
+
     float add(float lhs, float rhs)
     {
         return lhs + rhs;
@@ -99,6 +113,20 @@ struct FloatType
 
 struct DoubleType
 {
+    double* d = nullptr;
+
+    DoubleType(){}
+
+    DoubleType(double newDouble)
+    {
+        d = new double(newDouble);
+    }
+
+    ~DoubleType()
+    {
+        delete d;
+    }
+
     double add(double lhs, double rhs)
     {
         return lhs + rhs;
@@ -126,6 +154,20 @@ struct DoubleType
 
 struct IntType
 {
+    int* i = nullptr;
+
+    IntType() {}
+    
+    IntType(int newInt)
+    {
+        i = new int(newInt);
+    }
+
+    ~IntType()
+    {
+        delete i;
+    }
+
     int add(int lhs, int rhs)
     {
         return lhs + rhs;
@@ -155,6 +197,7 @@ struct IntType
 int main()
 {
     FloatType ft;
+
     auto floatAddResult = ft.add(23.90f, 99.1245f);
     auto floatSubtractResult = ft.subtract(924, 12.42f);
     auto floatMultiplyResult = ft.multiply(12.415f, 2.0f);
